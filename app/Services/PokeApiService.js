@@ -5,8 +5,12 @@ class PokeApiService {
 
   async getAllPokemons() {
     let res = await pokeApi.get('pokemon')
-    console.log(res.data.results)
+    // console.log(res.data.results)
     ProxyState.allPokemons = res.data.results
+  }
+  async getPokemon(id) {
+    let res = await pokeApi.get(id)
+    console.log(res.data)
   }
 }
 
